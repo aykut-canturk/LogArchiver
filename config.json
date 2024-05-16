@@ -1,0 +1,7 @@
+{
+    "DIRS_TO_SEARCH": [
+        "/path/to/logs_dir1",
+        "/path/to/logs_dir2"
+    ],
+    "MAX_DAYS_THRESHOLD": 0
+}
