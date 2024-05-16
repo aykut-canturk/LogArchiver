@@ -1,6 +1,0 @@
-Exe Create;
-pip install pyinstaller
-pyinstaller --onefile main.py
-
-run unit tests;
-python -m unittest discover -s tests
