@@ -14,7 +14,9 @@ These instructions will get you a copy of the project up and running on your loc
 ### Installation
 
 1. Clone the repository to your local machine.
+   `git clone https://github.com/aykut-canturk/LogArchiver.git`
 2. Navigate to the project directory.
+   `cd LogArchiver`
 3. Install the necessary Python packages using pip:
    `pip install -r requirements.txt`
 
