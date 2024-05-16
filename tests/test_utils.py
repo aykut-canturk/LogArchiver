@@ -12,8 +12,8 @@ class TestGetParams(unittest.TestCase):
     def setUp(self):
         self.test_file = os.path.join(tempfile.gettempdir(), "config.json")
         self.test_data = {
-            "DIRS_TO_SEARCH": ["/test/dir1", "test/dir2"],
-            "MAX_DAYS_THRESHOLD": 7,
+            "DirsToSearch": ["/test/dir1", "test/dir2"],
+            "ArchiveThresholdDays": 7,
         }
         with open(self.test_file, "w", encoding="utf-8") as f:
             json.dump(self.test_data, f)
@@ -22,9 +22,9 @@ class TestGetParams(unittest.TestCase):
         os.remove(self.test_file)
 
     def test_get_params(self):
-        dirs_to_search, max_days_threshold = get_params(self.test_file)
-        self.assertEqual(dirs_to_search, self.test_data["DIRS_TO_SEARCH"])
-        self.assertEqual(max_days_threshold, int(self.test_data["MAX_DAYS_THRESHOLD"]))
+        dirs_to_search, archive_threshold_days = get_params(self.test_file)
+        self.assertEqual(dirs_to_search, self.test_data["DirsToSearch"])
+        self.assertEqual(archive_threshold_days, int(self.test_data["ArchiveThresholdDays"]))
 
 
 class TestPrepareLogging(unittest.TestCase):

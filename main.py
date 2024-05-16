@@ -7,13 +7,13 @@ def __run():
     log("Operation is starting...")
 
     log("Binding params...")
-    dirs_to_search, max_days_threshold = get_params()
+    dirs_to_search, archive_threshold_days = get_params()
     log("Params are bound.")
 
     if not dirs_to_search or len(dirs_to_search) == 0:
         raise ValueError("dirs_to_search param variable is not set.")
 
-    time_threshold = time.time() - (max_days_threshold * 24 * 60 * 60)
+    time_threshold = time.time() - (archive_threshold_days * 24 * 60 * 60)
 
     for d in dirs_to_search:
         log(f"Searching in {d} directory...")

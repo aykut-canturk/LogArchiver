@@ -12,22 +12,22 @@ def get_params(config_file="config.json"):
 
     with open(config_file, "r", encoding="utf-8") as f:
         params = json.load(f)
-        if "DIRS_TO_SEARCH" not in params or "MAX_DAYS_THRESHOLD" not in params:
+        if "DirsToSearch" not in params or "ArchiveThresholdDays" not in params:
             raise ValueError(
-                "DIRS_TO_SEARCH or MAX_DAYS_THRESHOLD not found in config file."
+                "DirsToSearch or ArchiveThresholdDays not found in config file."
             )
-        dirs_to_search = params["DIRS_TO_SEARCH"]
-        max_days_threshold = params["MAX_DAYS_THRESHOLD"]
+        dirs_to_search = params["DirsToSearch"]
+        archive_threshold_days = params["ArchiveThresholdDays"]
 
         if not isinstance(dirs_to_search, list):
-            raise ValueError("DIRS_TO_SEARCH must be a list.")
+            raise ValueError("DirsToSearch must be a list.")
         if not all(isinstance(d, str) for d in dirs_to_search):
-            raise ValueError("All elements of DIRS_TO_SEARCH must be a string.")
+            raise ValueError("All elements of DirsToSearch must be a string.")
 
-        if not isinstance(max_days_threshold, int):
-            raise ValueError("MAX_DAYS_THRESHOLD must be an integer.")
+        if not isinstance(archive_threshold_days, int):
+            raise ValueError("ArchiveThresholdDays must be an integer.")
 
-        return dirs_to_search, int(max_days_threshold)
+        return dirs_to_search, int(archive_threshold_days)
 
 
 def prepare_logging(log_dir=None):
