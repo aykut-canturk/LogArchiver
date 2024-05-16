@@ -3,5 +3,5 @@
         "/path/to/logs_dir1",
         "/path/to/logs_dir2"
     ],
-    "ArchiveThresholdDays": 0
+    "ArchiveThresholdDays": 15
 }
