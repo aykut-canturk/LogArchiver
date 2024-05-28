@@ -3,6 +3,7 @@ import os
 import json
 import zipfile
 import logging
+import re
 
 
 def get_params(config_file="config.json"):
@@ -52,7 +53,7 @@ def zip_and_delete_logs(directory, file_age_limit):
     """Zip and delete the log files older than the file_age_limit."""
     for root, _, files in os.walk(directory):
         for filename in files:
-            if filename.endswith(".log") or filename.endswith(".txt"):
+            if re.search(r"(\.log|\.txt)(\.\d+)?$", filename):
                 file_path = os.path.join(root, filename)
 
                 # Check if the file is older than the file_age_limit
