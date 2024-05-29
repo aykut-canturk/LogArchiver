@@ -26,7 +26,7 @@ These instructions will get you a copy of the project up and running on your loc
 2. Configure the following parameters according to your preferences:
 
    - **DirsToSearch**: List of directories to search for log files. Example: `["/path/to/logs_dir1", "/path/to/logs_dir2"]`
-   - **ArchiveThresholdDays**: Maximum number of days threshold for considering a log file as old and archiving it. Example: `15`
+   - **ArchiveThresholdDays**: Maximum number of days threshold for considering a log file as old and archiving it. Example: `30`
 
 3. Save the `config.json` file.
 4. Start the program by running `python main.py`.
